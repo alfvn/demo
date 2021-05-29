@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 测试环境 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- 生产环境 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
+</head>
+<body>
+  <div id="app"></div>
+  <div id="app1"></div>
+  <script>
+    Vue.component('OK',{
+      data:{
+        use: 1
+      },
+      template: '<span>{{use}}</span>',
+      beforeCreate(){
+        // console.log(this, this.message)
+      },
+      mounted(){
+        // console.log(this.$el)
+      },
+      methods:{
+        test(){
+          // console.log('test')
+        },
+        onClick(){
+          // console.log(this)
+          // this.message=2
+        }
+      }
+    })
+    new Vue({
+      template: `<a href="tel:13026111385">
+        13026111385
+        {{text}}
+        <OK></OK>
+        </a>`,
+      data: {
+        text: 1
+      }
+    }).$mount('#app1')
+
+    new Vue({
+      template: '<a href="tel:13026111386"><OK></OK></a>'
+    }).$mount('#app')
+    
+    // console.error('warning')
+  </script>
+  
+</body>
+</html>

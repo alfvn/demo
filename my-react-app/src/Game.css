@@ -1,0 +1,16 @@
+.game{
+  display: flex;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+.board-row{
+  display: flex;
+}
+
+.square{
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  font-weight: bold;
+}
